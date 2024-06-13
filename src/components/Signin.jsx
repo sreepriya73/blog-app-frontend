@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from './NavBar'
 
 const Signin = () => {
+    const [data,setData]=useState(
+        {
+            "emailid":"",
+            "password":""
+        }
+    )
+    const inputHandler=(event)=>{
+        setData({...data,[event.target.name]:event.target.value})
+    }
+    const readValue=()=>{
+        console.log(data)
+    }
   return (
     <div>
         <NavBar/>
