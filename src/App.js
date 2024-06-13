@@ -2,13 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 import Signup from './components/Signup';
 import Signin from './components/Signin';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <Signup/>
-      <Signin/>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Signin/>}/>
+      <Route path='/signup' element={<Signup/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
