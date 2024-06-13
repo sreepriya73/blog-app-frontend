@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from './NavBar'
 
 const Signup = () => {
+    const [data,setData]=useState({
+        "name":"",
+        "emailid":"",
+        "password":""
+    })
+    const inputHandler=(event)=>{
+        setData({...data,[event.target.name]:event.target.value})
+    }
+    const readValue=()=>{
+        console.log(response.data)
+    }
   return (
     <div>
         <NavBar/>
@@ -10,7 +21,7 @@ const Signup = () => {
             <div className="row g-3">
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <label htmlFor="" className="form-label">NAME</label>
-                    <input type="text" className="form-control" />
+                    <input type="text" className="form-control" name='' value={data.} onChange={inputHandler}/>
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <label htmlFor="" className="form-label">EMAIL</label>
